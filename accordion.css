@@ -1,0 +1,59 @@
+
+input{
+  display:none;
+}
+
+label{
+  display:block;
+  position: relative;
+  padding:10px 20px;
+  margin-left:5px;
+  cursor:pointer;
+  background: lightblue;
+  border-radius:3px;
+  transition: ease-in-out 1s;
+}
+
+label:hover{
+  background: blue;
+}
+.content {
+    padding: 10px 25px;
+    margin-left:5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+label::after{
+  content: '\f054';
+  font-family: "Font Awesome 5 Free";
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top:6px;
+}
+
+input + label + .content {
+    display: none;
+}
+
+input:checked + label + .content {
+    display: block;
+}
+input:checked + label::after{
+  content:'\f078';
+  tranform:rotate(90deg);
+}
+
+.label2 + label + .content {
+  opacity: 0;
+  padding: 0 25px;
+  transition: ease-in-out 1s;
+}
+
+.label2:checked + label + .content {
+  opacity: 1;
+
+}
